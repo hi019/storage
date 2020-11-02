@@ -44,7 +44,7 @@ jobs:
             - name: Run Test
               run: go test ./mysql -v -race
               env:
-                MYSQL_ADDRESS: "mysql:3306"
+                MYSQL_ADDRESS: "localhost:3306"
                 MYSQL_USERNAME: username
                 MYSQL_PASSWORd: password
                 MYSQL_DATABASE: fiber
