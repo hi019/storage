@@ -18,7 +18,7 @@ jobs:
             mysql:
                 # Docker Hub image
                 image: mysql:5.7
-                env: >-
+                env:
                     - MYSQL_USER=username
                     - MYSQL_PASSWORD=password
                     - MYSQL_ROOT_PASSWORD=rootpassword
