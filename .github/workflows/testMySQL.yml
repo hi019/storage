@@ -19,8 +19,6 @@ jobs:
                 # Docker Hub image
                 image: mysql:5.7
                 env:
-                    MYSQL_USER: username
-                    MYSQL_PASSWORD: password
                     MYSQL_ROOT_PASSWORD: rootpassword
                     MYSQL_DATABASE: fiber
                 ports:
@@ -45,6 +43,6 @@ jobs:
               run: go test ./mysql -v -race
               env:
                 MYSQL_ADDRESS: "localhost:3306"
-                MYSQL_USERNAME: username
-                MYSQL_PASSWORd: password
+                MYSQL_USERNAME: root
+                MYSQL_PASSWORd: rootpassword
                 MYSQL_DATABASE: fiber
