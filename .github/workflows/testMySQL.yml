@@ -12,20 +12,25 @@ jobs:
         # Containers must run in Linux based operating systems
         runs-on: ubuntu-latest
         
-        mysql:
-            # Docker Hub image
-            image: mysql:5.7
-            env:
-                - MYSQL_USER=username
-                - MYSQL_PASSWORD=password
-                - MYSQL_ROOT_PASSWORD=rootpassword
-                - MYSQL_DATABASE=fiber
-            # Set health checks to wait until MySQL has started
-            options: >-
-                --health-cmd "mysqladmin ping"
-                --health-interval 10s
-                --health-timeout 5s
-                --health-retries 5
+        # Service containers to run with `container-job`
+        services:
+            # Label used to access the service container
+            mysql:
+                # Docker Hub image
+                image: mysql:5.7
+                env: >-
+                    - MYSQL_USER=username
+                    - MYSQL_PASSWORD=password
+                    - MYSQL_ROOT_PASSWORD=rootpassword
+                    - MYSQL_DATABASE=fiber
+                ports:
+                    - 3306:3306
+                # Set health checks to wait until MySQL has started
+                options: >-
+                    --health-cmd "mysqladmin ping"
+                    --health-interval 10s
+                    --health-timeout 5s
+                    --health-retries 5
         strategy:
             matrix:
                 go-version: [1.14.x, 1.15.x]
