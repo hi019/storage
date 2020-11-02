@@ -20,8 +20,7 @@ jobs:
             mysql:
                 # Docker Hub image
                 image: mysql:5.7
-                command: --default-authentication-plugin=mysql_native_password
-                environment:
+                env:
                     - MYSQL_USER=username
                     - MYSQL_PASSWORD=password
                     - MYSQL_ROOT_PASSWORD=rootpassword
