@@ -1,8 +1,8 @@
 on:
     push:
-        branches: [ master ]
+        branches: [ tests-setup ]
     pull_request:
-        branches: [ master ]
+        branches: [ tests-setup ]
     workflow_dispatch:
 
 
