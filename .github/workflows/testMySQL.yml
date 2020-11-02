@@ -46,5 +46,5 @@ jobs:
               env:
                 MYSQL_ADDRESS: "127.0.0.1:3306"
                 MYSQL_USERNAME: username
-                MYSQL_PASSWORd: password
+                MYSQL_PASSWORD: password
                 MYSQL_DATABASE: fiber
